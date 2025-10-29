@@ -1,0 +1,15 @@
+export default {
+  async fetch() {
+    const PLACE_ID = 606849621;
+    const response = await fetch(`https://games.roblox.com/v1/games/${PLACE_ID}/servers/Public?sortOrder=Asc&excludeFullGames=true&limit=100`);
+    const data = await response.json();
+
+    const valid = data.data.find(
+      s => s.playing > 0 && s.playing <= (s.maxPlayers - 4)
+    );
+
+    return new Response(valid ? valid.id : "no_valid_jobid", {
+      headers: { "Content-Type": "text/plain" }
+    });
+  }
+};
