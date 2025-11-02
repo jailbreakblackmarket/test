@@ -1,4 +1,4 @@
-name = "chat-collector"
+name = "chat-collector-worker"
 main = "worker.js"
 compatibility_date = "2025-11-02"
 
