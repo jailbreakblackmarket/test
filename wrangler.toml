@@ -1,0 +1,7 @@
+name = "chat-collector"
+main = "worker.js"
+compatibility_date = "2025-11-02"
+
+[[kv_namespaces]]
+binding = "CHAT_KV"
+id = "11039bec290646f18f48059505e92107"
